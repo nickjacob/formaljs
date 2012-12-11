@@ -269,7 +269,7 @@ GenericWrapper.prototype.onfocus = function(e,direction) {
 
 
 // ================================================================================
-// Class SelectableWrapper < InputWrapper << FormalUIObject
+// Class SelectableWrapper < InputWrapper < FormalUIObject
 //  this supports an element which has a finite number
 //  of potential values (radio & checkbox types).
 //
