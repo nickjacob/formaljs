@@ -1,0 +1,146 @@
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  <title>Test</title>
+  <link rel="stylesheet" href="css/goodforms.css" />
+<link href='http://fonts.googleapis.com/css?family=Lato:100,300,900' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=League+Script' rel='stylesheet' type='text/css'>
+<script src='js/handlebars.min.js'></script>
+
+</head>
+<body>
+
+  <div class='container'>
+    <div id='header'>
+      <h1>My Special Forms Application
+        <small>use <span>&#xe00f</span> and <span>&#xe010</span> to switch fields</small>
+      </h1>
+
+    </div>
+    <div id='main'>
+
+      <form>
+        <div class='field form-field'>
+        <label for='fname'>
+          First Name:
+        </label>
+        <input class='' required id='firstName' name='firstName' type='text'>
+        </div>
+        <div class='field form-field'>
+        <label for='name'>
+          Last Name:
+        </label>
+        <input class='' required id='lastName' name='lastName' type='text'>
+        </div>
+        <div class='field form-field'>
+        <label for='name'>
+          Zip:
+        </label>
+        <input class='' name='zipCode' type='number'/>
+        </div>
+        <div class='field form-field'>
+        <label for='dog'>
+          Dog's Name:
+        </label>
+        <input class='' required id='dogName' name='dogName' type='text'/>
+        </div>
+
+        <fieldset>
+          <span for='checkgroup'>please select how you feel:</span>
+          <div data-type='radio' class='rang form-field' name='choice' id='radiogroup' >
+            <a>good</a>
+            <a>great</a>
+            <a class=''>awesome</a>
+          </div>
+
+          <span for='checkgroup'>please check your favorite Deli meats:</span>
+          <div data-type='checkbox' class='rang form-field' name='deliMeats' id='checkgroup' >
+            <a>ham</a>
+            <a>balogna</a>
+            <a>roast beef</a>
+            <a class=''>turkey</a>
+          </div>
+
+          <div class='field form-field'>
+          <label for='email'>Your Email Address:</label>
+          <input type='email' name='email' />
+          </div>
+        </fieldset>
+
+        <div id='submit' class='action-group'>
+        <input id='submit-button' type='submit' disabled />
+        <input name='reset' type='button' value='Reset'/>
+        </div>
+
+      </form>
+
+    </div>
+
+  </div>
+
+  <div id='timeline' class='gf-timeline'>
+      <a class='gf-timeline-control' id='gf-timeline-reset'>reset</a>
+    <div id='gf-timeline-move'>
+      <div id='gf-timeline-label'>really long field name</div>
+      <div id='gf-timeline-marker'></div>
+    </div>
+
+    <div id="timeline-inner" class='gf-timeline-inner'>
+      <ul class='gf-timeline-list' id='gf-timeline-list'>
+        <li type='fieldset' name='biography'>
+          <ul class='gf-timeline-fieldset'>
+            <li type='text' name='firstName' >1</li>
+            <li type='textarea' name='biography'class='current-field'>2</li>
+          </ul>
+          <span>fieldset name</span>
+        </li>
+        <li type='text' name='lastName'>3</li>
+        <li type='email' name='email'>4</li>
+        <li type='email' name='email'>4</li>
+        <li type='email' name='email'>4</li>
+        <li type='email' name='email'>4</li>
+        <li type='email' name='email'>4</li>
+        <li type='email' name='email'>4</li>
+        <li type='email' name='email'>4</li>
+        <li type='email' name='email'>4</li>
+      </ul>
+    </div>
+      <a class='gf-timeline-control' id='gf-timeline-submit'>submit</a>
+  </div>
+
+  <div id='form-control' class='legend-container'>
+  <div class='legend-box-header'>Progress</div>
+  <div class='gf legend-box'>
+    <ul id='update-list' class='gf-list legend-list'>
+    </ul>
+    <!--<div class='input-row'><input type='text' placeholder='hello'/> <button>test</button></div>-->
+  </div>
+  <div class='legend-form-controls'>
+    <div class='lfc-in'>
+      <span id='complete-msg' ></span>
+      <div class='progress-outer'><div id='progress-inner' class='progress-inner'></div></div>
+  </div>
+    <div class='btn-grp'>
+      <button class='' id='inspect-field' name='inspect-field'>&#xe007</button>
+      <button id='field-left' name='prev-field'>&#xe00f</button>
+      <button class='' id='field-right' name='next-field'>&#xe010</button>
+    </div>
+    <div id='msg-center'>
+      <span>message center:</span>
+      <p id='message'>message here</p>
+    </div>
+  </div>
+
+</div>
+<script>document.write('<script src="http://' + (location.host || 'localhost').split(':')[0] + ':35729/livereload.js?snipver=1"></' + 'script>')</script>
+<script id='legend-form-item-template' type='x-handlebars-template'>
+    <div class='legend-form-item'>
+      {{name}}
+    </div>
+    <div class='legend-form-state {{state}}'></div>
+</script>
+<script src='js/test.js' type='text/javascript'></script>
+</body>
+
+</html>

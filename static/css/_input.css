@@ -1,0 +1,9 @@
+.input-row {
+  background: #bbb;
+}
+.input-row * {
+  float: left;
+  padding: 0px;
+  margin: 0px;
+  background: #cac;
+}

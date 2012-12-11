@@ -1,0 +1,140 @@
+@import 'colors';
+@import 'base';
+
+.formal-field {
+  font-family: @formal-font;
+  display: block;
+  width: 100%;
+  float: left;
+
+  .nice-style(@field-bg);
+
+  font-weight: 400;
+  height: auto;
+  clear: both;
+  padding: 0px;
+  margin: 5px;
+  text-indent: 5px;
+
+  * {
+    float: left;
+  }
+
+  label {
+    box-sizing: border-box;
+    width: 30%;
+    line-height: @input-height;
+  }
+
+  input, select, textarea {
+    box-sizing: border-box;
+    text-indent: 5px;
+    padding: 0px;
+    font-size: 1.1em;
+    margin: 0px;
+    border: none;
+    border: 1px solid @field-bg;
+    border-left: 1px solid darken(@field-bg, 20%);
+    border-bottom: 2px solid @field-bg;
+    width: 70%;
+    height: @input-height;
+  }
+
+  textarea {
+    float: left;
+    min-height: 2*@input-height;
+
+
+  }
+
+  textarea + label {
+    height: 2*@input-height;
+    background: @black;
+  }
+
+}
+
+#container {
+  width: 60%;
+  margin: auto;
+}
+
+#header {
+  .full;
+  border-bottom: 2px solid @blue;
+  font-family: @formal-font;
+  color: @blue;
+  margin: 5px;
+
+  h1 {
+    margin: 0px;
+  }
+
+}
+
+.formal-field[contenteditable] {
+  float: left;
+  clear: both;
+}
+.formal-field:focus {
+  outline: none;
+  border-right: 3px solid @pblue;
+  
+  &:after {
+    content: '\e006';
+    font-family: 'icomoon';
+    position: relative;
+    left: 10px;
+    color: @pblue;
+  }
+}
+
+.formal-selectable-grp {
+  height: @input-height;
+  margin: 0px;
+  border: none;
+
+  a {
+    border: none;
+    box-sizing: border-box;
+    display: block;
+    height: 100%;
+    .nice-style(@field-bg);
+
+    &.formal-active {
+      
+    }
+  }
+
+}
+.formal-selectable-item {
+
+  height: @input-height;
+
+  &.formal-active {
+    background: @field-active;
+    color: lighten(@field-active, 50%);
+    text-shadow: -1px -1px -1px darken(@field-active, 20%);
+  }
+
+  &.formal-selected {
+    background: @field-selected;
+    color: lighten(@field-selected, 30%);
+    text-shadow: -1px -1px -1px darken(@field-selected, 20%);
+  }
+
+}
+
+
+input[type='submit'] {
+  margin: 10px;
+  margin-right: 0px;
+  float: right;
+  height: @input-height;
+  .nice-style(@pblue);
+  font-size: 1.2em;
+
+  &:disabled {
+    .nice-style(desaturate(@pblue, 50%));
+  }
+}

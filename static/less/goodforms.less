@@ -1,0 +1,191 @@
+// GoodForms css
+// this is the primary/full application CSS
+
+@import '_base';
+@import '_icons';
+@import '_input';
+@import '_layout';
+@import 'timeline.less';
+
+@legend-width: 180px;
+@legend-bg: #efefef;
+@legend-border: darken(@legend-bg,20%);
+@legend-header-color: #cecece;
+@icon-height: 18px;
+@text-font-size: 12px;
+
+.spacial-bg {
+  .gradient(torg,@off_white,lighten(@off_white,10%));
+}
+
+.legend-box-header {
+  text-align: center;
+  padding: 5px;
+  width: @legend-width;
+  .gradient(hub,@off_white,darken(@off_white,5%));
+  color: @legend-bb;
+  font-size: 1.1em;
+  //font-family: 'League Script';
+  font-weight: 900;
+  border: 1px solid @legend-bb;
+  margin-bottom: 5px;
+}
+
+@legend-bb: darken(@legend-bg,40%);
+
+.legend-box {
+  .pretty-box(@legend-bg);
+  width: @legend-width;
+  float: left;
+  border: 1px solid @legend-bb;
+  border-bottom: none;
+}
+
+.legend-list {
+  padding: 0px;
+
+  li:hover {
+    .spacial-bg;
+  }
+
+  li {
+    .pretty-box(@legend-bg);
+    .gradient(hub,@off_white,darken(@off_white,5%));
+    padding: 5px;
+    cursor: pointer;
+
+
+  }
+
+}
+
+.legend-form-item {
+  float: left;
+  border-right: 1px solid @legend-border;
+  padding: 0px 5px;
+  height: @icon-height;
+  line-height: @icon-height;
+  width: @legend-width - @icon-height - 20px;
+
+}
+
+.invisible-text {
+  text-indent: -9999px;
+}
+
+.legend-form-state {
+  width: @icon-height;
+  border-left: 1px solid lighten(@legend-border,50%);
+  height: @icon-height;
+  color: darken(@legend-bg,20%);
+  float: left;
+  display: block;
+  padding-left: 5px;
+
+  &:hover {
+    color: darken(@legend-bg,30%);
+
+  }
+}
+
+.legend-form-controls {
+  float: left;
+  width: @legend-width;
+  margin-top: 5px;
+  background: @legend-bg;
+  .gradient(hub,@off_white,darken(@off_white,5%));
+  border: 1px solid @legend-bb;
+  color: darken(@legend-bg,50%);
+
+  span {
+    display: block;
+    margin: 5px;
+    margin-bottom: 0px;
+  }
+
+}
+
+.finished {
+
+  background: fadeout(@green,50%);
+  border-radius:5px;
+
+  &:after {
+
+    content: "100% complete!";
+    position: absolute;
+    left: 20px;
+    width: 100px;
+    top: 20px;
+    background: fadeout(@green,50%);
+    padding: 10px;
+    border: 1px solid @green;
+
+  }
+
+}
+
+.btn-grp {
+  width: 100%;
+  float: left;
+  border-bottom: 1px solid @legend-bb;
+  border-top: 1px solid @legend-bb;
+  margin-top: 5px;
+
+  button {
+      .gradient(hol,@off_white,darken(@off_white,5%));
+
+    &:hover {
+      .gradient(hol,darken(@off_white,5%),@off_white);
+      //background: darken(@legend-bg,10%);
+    }
+
+  }
+
+  button:last-child {
+    border-right: none;
+  }
+
+}
+
+#field-left.clicked,
+#field-right.clicked
+{
+
+  .gradient(hol,darken(@off_white,5%),@off_white);
+}
+
+@faded : fadeout(@blue,90%);
+
+.legend-container {
+  width: @legend-width + 20px;
+  background: @faded;
+  float: right;
+  position: fixed;
+  top: 20px;
+  right: 10px;
+  padding: 10px;
+  border-radius: 10px;
+}
+
+#msg-center {
+
+  padding: 0px;
+  min-height: 150px;
+  color: @legend-bb;
+
+
+  span {
+    display: block;
+    padding: 5px;
+    border-bottom: 1px dashed @legend-bb;
+    margin: 0px;
+  }
+
+  #message {
+    margin: 0px;
+    padding: 5px;
+    font-size: 0.8em;
+  }
+
+}

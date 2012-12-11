@@ -1,0 +1,252 @@
+// Timeline
+// this defines the style of the timeline
+// trying to be as efficient & flexible as possible.
+
+// variables; colors taken from kuler palette
+@tl-cream: #e9F1DF;
+@tl-orange: #F5A503;
+@tl-red: #F2385A;
+@tl-lb: #4ad9d9;
+@tl-b: #36b1fa;
+
+@tl-black: darken(@tl-b, 90%);
+@tl-white: lighten(@tl-b, 90%);
+
+@timeline-bg: @tl-b;
+@list-bg: lighten(@tl-b,10%);
+
+
+//size variables
+@timeline-height: 120px;
+@inner-height: @timeline-height * 0.6;
+@mover-width: 100px;
+
+@label-height: 20px;
+
+// root element; clear all styles below
+.gf-timeline {
+
+  // use the MS box model
+  box-sizing: border-box;
+  // display it at the bottom of the page all the way accross
+  position: fixed;
+  bottom: 0px;
+  left: 0px;
+  width: 100%;
+  min-width: 900px;
+  height: @timeline-height;
+  padding: @label-height 0px;
+
+  // style it
+  background: @timeline-bg;
+
+  ul,
+  li,
+  span,
+  div
+  {
+
+    margin: 0px;
+    padding: 0px;
+    text-align: center;
+    float: left;
+  }
+
+}
+
+a.gf-timeline-control {
+  height: @inner-height;
+  box-sizing: border-box;
+  display: block;
+  line-height: @inner-height;
+  text-align: center;
+  font-size: 1.4em;
+  padding: 0px 20px;
+  float: left;
+  background: #ccc;
+  border: 1px solid #aaa;
+  cursor: pointer;
+
+  &#gf-timeline-reset {
+    // normally moved more left
+    position: relative;
+    right: 50px;
+    margin-right: 10px;
+    border-top-right-radius: @inner-height;
+    border-bottom-right-radius: @inner-height;
+
+    &:hover {
+      right: 0px;
+
+    }
+  }
+
+  &#gf-timeline-submit {
+    position: absolute;
+    right: -60px;
+    border-top-left-radius: @inner-height;
+    border-bottom-left-radius: @inner-height;
+
+    &:hover {
+      right: 0px;
+    }
+
+  }
+}
+// Inner List
+div.gf-timeline-inner {
+
+  // make it width w/ margin
+  overflow-x: scroll;
+  width: 70%;
+
+}
+@out-border: darken(@list-bg, 10%);
+@in-border: lighten(@list-bg, 10%);
+ul.gf-timeline-list {
+
+  width: 2000px;
+  display: inline-block;
+  background: @list-bg;
+  height: @inner-height;
+  border: 1px solid lighten(@timeline-bg, 5%);
+  overflow-x: scroll;
+
+
+  .gf-timeline-fieldset {
+    display: inline-block;
+    width: 100%;
+    float: none;
+    height: @inner-height * .6;
+    border-bottom: 1px solid @out-border;
+    margin: auto;
+
+    li {
+      display: inline-block;
+      height: @inner-height * 0.6;
+      line-height: @inner-height *0.6;
+    }
+  }
+
+  li {
+    float: left;
+    display: inline-block;
+    line-height: @inner-height;
+    padding: 0px 5px;
+    border-right: 1px solid @out-border;
+    border-left: 1px solid @in-border;
+
+    &:first-of-type {
+      border-left: none;
+    }
+
+    &:last-of-type {
+      border-right: none;
+    }
+
+    &[type='fieldset'] {
+      padding: 0px;
+    }
+
+  }
+
+  & > li {
+
+    &:last-child {
+      //border-right: 2px solid #bbb;
+    }
+
+  }
+
+  ul {
+
+  }
+
+}
+
+// style the little selector widget
+#gf-timeline-move {
+
+  width: @mover-width;
+  position: absolute;
+  top: -5px;
+  left: 90px;
+  height: @inner-height;
+
+  div {
+    background: lighten(@tl-black,10%);
+    border: 1px solid darken(@tl-black,20%);
+  }
+
+  #gf-timeline-label {
+    width: 100%;
+    font-size: 0.8em;
+    padding: 0px 5px;
+    color: @tl-white;
+    height: @label-height;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    line-height: @label-height;
+    margin: 0px;
+    //border-radius: @label-height;
+
+    &:hover {
+      text-overflow: inherit;
+
+    }
+
+  }
+
+  #gf-timeline-marker {
+    width: 5px;
+    height: @inner-height + 7px;
+    margin-left: @mover-width / 2;
+    margin-top: -1px;
+    border-top: none;
+  }
+
+
+}
+
+// widths for all the types
+@fieldset: 150px;
+@text-input: 100px;
+@textarea: 200px;
+@email: @text-input;
+// styles for each type of input
+
+li[type='fieldset'] {
+  padding: 0px;
+  float: left;
+
+  height: @inner-height;
+  width: auto;
+
+  span {
+    width: 100%;
+    text-align: center;
+    font-weight: 700;
+    float: left;
+    height: @inner-height * 0.4 - 1px;
+    font-size: 0.8em;
+    line-height: @inner-height * 0.4;
+    border-top: 1px solid @in-border;
+    background: darken(@list-bg, 20%);
+    color: darken(@list-bg, 60%);
+  }
+
+}
+
+li[type='text'] {
+  width: @text-input;
+
+}
+
+li[type='textarea'] {
+  width: @textarea;
+}
+
+li[type='email'] {
+  width: @email;
+}

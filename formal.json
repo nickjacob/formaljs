@@ -1,0 +1,25 @@
+
+{
+  "name" : "formal",
+  "title" : "Formal",
+  "description" : "Just a little library to spruce up your forms.",
+  "version" : "0.0.1",
+  "homepage" :"",
+  "author" : {
+
+    "name" : "Nick Jacob",
+    "email" : "me@nickjacob.com"
+
+  },
+  "repository" : {
+    "type" : "git",
+    "url" : ""
+  },
+  "bugs" : { "url" : "" },
+
+  "licenses" : {
+
+  },
+  "keywords" : ["forms"]
+}
+

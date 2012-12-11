@@ -1,0 +1,73 @@
+// Actually just CSS
+// these are the icon font definitions
+// nice!
+@fonts-url: "../fonts/";
+
+@font-face {
+	font-family: 'icomoon';
+	src:url('@{fonts-url}icomoon.eot');
+	src:url('@{fonts-url}icomoon.eot?#iefix') format('embedded-opentype'),
+		url('@{fonts-url}icomoon.svg#icomoon') format('svg'),
+		url('@{fonts-url}icomoon.woff') format('woff'),
+		url('@{fonts-url}icomoon.ttf') format('truetype');
+	font-weight: normal;
+	font-style: normal;
+}
+
+/* Use the following CSS code if you want to use data attributes for inserting your icons */
+[data-icon]:before {
+	font-family: 'icomoon';
+	content: attr(data-icon);
+	speak: none;
+	font-weight: normal;
+	-webkit-font-smoothing: antialiased;
+}
+
+/* Use the following CSS code if you want to have a class per icon */
+[class^="icon-"]:before, [class*=" icon-"]:before {
+	font-family: 'icomoon';
+	font-style: normal;
+	speak: none;
+	font-weight: normal;
+	-webkit-font-smoothing: antialiased;
+}
+
+.incomplete:after,
+.icon-pencil:before {
+	content: "\e000";
+}
+.legend-form-state {
+  font-family: 'icomoon';
+  font-style: normal;
+  speak: none;
+  font-weight: normal;
+  -webkit-font-smoothing: antialiased;
+  font-size: @icon-height - 4;
+  line-height: @icon-height;
+}
+
+.complete:after,
+.valid:after,
+.icon-checkmark:before {
+	content: "\e001";
+}
+
+.icon-cancel:before {
+	content: "\e002";
+}
+
+.invalid:after,
+.icon-cancel-2:before {
+	content: "\e003";
+}
+.icon-help:before {
+	content: "\e004";
+}
+
+.active:after,
+.icon-eye:after {
+	content: "\e006";
+}
+.icon-new-tab:before {
+	content: "\e005";
+}

@@ -1,0 +1,42 @@
+// FORMAL
+// These are the global colors
+// so if you want to change it, just configure these
+
+@blue: #328BE5;
+@lightblue: #42A0FF;
+@pblue: #5575F4;
+
+@red: #FF2C31;
+@fadedred: #CC4533;
+@green: #00C59C;
+@black: darken(@blue, 90%);
+@steel: #576171;
+@grape: #601C56;
+@neon: #A1D815;
+@lightpurp: #C515CF;
+
+// timeline
+@timeline-bg: @blue;
+@timeline-color: contrast(@timeline-bg, darken(@timeline-bg, 70%), lighten(@timeline-bg, 70%));
+
+// inputs
+@btn-bg: @green;
+
+@text: @red;
+@textarea: @steel;
+@email: @neon;
+@number: @grape;
+@select: mix(@steel, @red, 70%);
+
+// field
+@field-bg: lighten(@steel, 20%);
+@field-active: @blue;
+@field-selected: @pblue;
+
+
+// field states
+@valid-color: fadeout(@green, 20%);
+@invalid-color: fadeout(@red, 20%);
+@incomplete-color: fadeout(@black, 60%);
+
+@active-color: @lightpurp;

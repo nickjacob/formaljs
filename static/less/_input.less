@@ -1,0 +1,365 @@
+// defines input fields
+
+@input-row-height: 30px;
+@input-row-color: #efefef;
+.input-row {
+
+  width: 100%;
+  float: left;
+  background: #bbb;
+  height: @input-row-height;
+  border: 1px solid @input-row-color;
+
+  * {
+    float: left;
+    padding: 5px;
+    margin: 0px !important;
+    border-radius: 0px !important;
+    border: none;
+    height: @input-row-height;
+  }
+}
+
+@field-margin: 5px;
+
+input {
+  font-family: 'Lato';
+  //.transition;
+}
+
+// FORM CSS
+// hopefully this will be nice!
+form {
+  box-sizing: border-box;
+  float: left;
+  border: 2px solid @black;
+  width: 100%;
+  padding: 5px;
+
+}
+
+.field {
+  clear: both;
+  padding: 5px 0px;
+  float: left;
+  height: @input-height + @field-margin*2;
+  width: 80%;
+
+  input, label  {
+    float: left;
+    display: block;
+  }
+
+}
+
+@input-height: 44px;
+@modal-color: #efefef;
+
+span[for] {
+
+  float: left;
+  display: block;
+  clear: both;
+
+}
+div[data-type] {
+
+  clear: both;
+
+  button,a {
+    font-weight: 300;
+    height: @input-height;
+    line-height: @input-height;
+    text-align: center;
+    cursor: pointer;
+    float: left;
+    min-width: 44px;
+    border-right: 1px solid darken(@lightfade,5%);
+
+    &:focus {
+
+      background: @green;
+      border: 3px solid @green;
+
+    }
+    &:last-child {
+      border-right: 1px solid darken(@lightfade,20%);
+
+    }
+    &:first-child {
+      border-left: 1px solid darken(@lightfade,20%);
+    }
+
+  }
+
+  &:focus {
+    outline: none;
+    
+    &:after {
+      font-family: 'icomoon';
+      content: '\e006';
+      color: @lightfade;
+      margin-left: 10px;
+
+    }
+  }
+
+
+  button.selected,
+  a.selected {
+    background: @lightfade;
+    color: darken(@lightfade,20%);
+  }
+
+  a.choice {
+    color: #fef;
+
+  }
+
+  &.modal {
+
+    .field.modal;
+
+    button,
+    a
+    {
+      height: @input-height*2;
+      font-size: 1.8em;
+
+    }
+    button:first-child,
+    a:first-child
+    {
+      margin-left: 25%;
+
+      &:before {
+        content: 'please make your selection';
+        color: @black;
+        position: absolute;
+        top: 26%;
+        left: 25%;
+        background: @modal-color;
+        border: 1px solid lighten(@modal-color,10%);
+        padding: 5px;
+        line-height: @input-height;
+        font-size: 0.5em;
+      }
+
+      &:after {
+        content: 'click anywhere to exit';
+        position: absolute;
+        top: 20px;
+        left: 20px;
+        background: @modal-color;
+        border: 1px solid lighten(@modal-color,10%);
+        padding: 5px;
+        line-height: @input-height;
+        font-size: 0.5em;
+      }
+
+    }
+
+  }
+
+}
+
+div[data-type='checkbox'] {
+
+    a {
+
+      &.selected {
+
+        &:after {
+          content: '\e008';
+          font-family: 'icomoon';
+          background: none;
+          color: darken(@lightfade,20%);
+          margin-left: 5px;
+
+        }
+      }
+    }
+
+}
+
+input[type='checkbox'],
+input[type='radio']
+{
+  height: @input-height;
+  line-height: @input-height;
+  border: 1px solid @lightfade;
+  float:left;
+
+}
+
+input[type='checkbox'] + span,
+input[type='radio'] + span
+{
+  background: @lightfade;
+  float: left;
+
+}
+
+input[type='text'],
+input[type='number'],
+input[type='search'],
+input[type='email'],
+input[type='url'],
+{
+  display: block;
+  height: @input-height;
+  border: none;
+  margin: 0px;
+  background: #fff;
+  border: 1px solid @lightfade;
+  padding: 5px;
+
+  &:focus {
+    outline: none;
+    background: #efefef;
+
+  }
+
+}
+
+.field input {
+  width: 70%;
+}
+.field label {
+  width: 25%;
+}
+
+input[required] {
+
+}
+
+
+
+input[type='submit'], 
+input[type='button'],
+form button,
+form a
+{
+  .transition;
+  height: @input-height;
+  font-weight: 900;
+  color: darken(@lightfade,60%);
+  background: darken(@lightfade,10%);
+  border: 1px solid darken(@lightfade,15%);
+  margin: 5px 0px;
+  padding: 5px;
+
+  &:hover {
+    background: darken(@lightfade,15%);
+    border: 1px solid darken(@lightfade,20%);
+  }
+
+}
+
+@lightfade : lighten(@blue,50%);
+@darkfade: desaturate(@light_blue,50%);
+
+label {
+  line-height: @input-height;
+  padding-right: 10px;
+  background: @lightfade;
+  text-align: right;
+  padding: 0px 5px;
+
+  &:before {
+    cursor: pointer;
+    font-family: 'icomoon';
+    content: '\e005';
+    float: left;
+    color: darken(@lightfade,10%);
+
+  }
+
+}
+
+input[type='submit'] {
+
+}
+
+.action-group {
+  margin-top: 10px;
+  clear: both;
+  float: right;
+  padding: 5px;
+
+  input,button {
+    margin: 0px;
+    height: 44px;
+    min-width: 44px;
+  }
+
+  input[name^='reset'] {
+    background: desaturate(@lightfade,40%);
+    color: @grey;
+    border: 1px solid #bcbcbc;
+  }
+
+  // if MAC
+  button,input {
+    float: left;
+    margin-right: 5px;
+  }
+
+  input[type='submit'] {
+    float: right;
+    margin: 0px;
+  }
+
+}
+
+fieldset,
+legend
+{
+  box-sizing: border-box;
+  margin: 5px 0px;
+  border: none;
+  border-top: 1px solid @lightfade;
+  border-bottom: 1px solid @lightfade;
+  background: @faded;
+  float: left;
+  width: 100%;
+
+  .field {
+    width: 100%;
+  }
+
+}
+
+.field.modal {
+
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  padding: 20% 100px;
+  width: 100%;
+  z-index: 10;
+  height: 100%;
+  background: fadeout(#fff,20%);
+
+  label:before {
+    content: 'click anywhere to close';
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    color: @black;
+    background: @modal-color;
+    border: 1px solid lighten(@modal-color,10%);
+    line-height: @input-height;
+    padding: 5px;
+    font-size: 0.5em;
+  }
+  
+  label, input {
+    height: @input-height*2;
+    line-height: @input-height*2;
+    font-size: 1.8em;
+  }
+
+}
+
+

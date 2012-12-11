@@ -1,0 +1,113 @@
+
+/* Use the following CSS code if you want to use data attributes for inserting your icons */
+[data-icon]:before {
+	font-family: 'icomoon';
+	content: attr(data-icon);
+	speak: none;
+	font-weight: normal;
+	line-height: 1;
+	-webkit-font-smoothing: antialiased;
+}
+
+/* Use the following CSS code if you want to have a class per icon */
+[class^="icon-"]:before, [class*=" icon-"]:before {
+	font-family: 'icomoon';
+	font-style: normal;
+	speak: none;
+	font-weight: normal;
+	line-height: 1;
+	-webkit-font-smoothing: antialiased;
+}
+.icon-checkmark:before {
+	content: "\e001";
+}
+.icon-cancel:before {
+	content: "\e002";
+}
+.icon-cancel-2:before {
+	content: "\e003";
+}
+.icon-help:before {
+	content: "\e004";
+}
+.icon-eye:before {
+	content: "\e006";
+}
+.icon-new-tab:before {
+	content: "\e005";
+}
+.icon-fullscreen:before {
+	content: "\e007";
+}
+.icon-checkmark-2:before {
+	content: "\e008";
+}
+.icon-check-alt:before {
+	content: "\e009";
+}
+.icon-x:before {
+	content: "\e00a";
+}
+.icon-x-altx-alt:before {
+	content: "\e00b";
+}
+.icon-denied:before {
+	content: "\e00c";
+}
+.icon-minus:before {
+	content: "\e00d";
+}
+.icon-minus-alt:before {
+	content: "\e00e";
+}
+.icon-arrow-left:before {
+	content: "\e00f";
+}
+.icon-arrow-right:before {
+	content: "\e010";
+}
+.icon-pen-alt2:before {
+	content: "\e011";
+}
+.icon-pen-alt-fill:before {
+	content: "\e012";
+}
+.icon-tab:before {
+	content: "\e013";
+}
+.icon-enter:before {
+	content: "\e014";
+}
+.icon-pencil:before {
+	content: "\e015";
+}
+.icon-pencil-2:before {
+	content: "\e000";
+}
+.icon-reply:before {
+	content: "\e016";
+}
+.icon-cog:before {
+	content: "\e017";
+}
+.icon-zoom-in:before {
+	content: "\e018";
+}
+.icon-forward:before {
+	content: "\e019";
+}
+.icon-backspace:before {
+	content: "\e01a";
+}
+.icon-new-tab-2:before {
+	content: "\e01b";
+}
+.icon-checkmark-3:before {
+	content: "\e01c";
+}
+.icon-cancel-3:before {
+	content: "\e01d";
+}
+.icon-eye-2:before {
+	content: "\e01e";
+}

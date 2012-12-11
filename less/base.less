@@ -1,0 +1,75 @@
+// Base
+// this is the base styles for Formal
+// just variables & mixins in here
+@input-height: 44px;
+@formal-font: 'Helvetica Neue';
+
+@btn-inner: 1px solid lighten(@btn-bg, 5%);
+@btn-outer: 1px solid darken(@btn-bg, 20%);
+@btn-color: darken(@btn-bg, 30%);
+
+@font-face {
+	font-family: 'icomoon';
+	src:url('fonts/icomoon.eot');
+	src:url('fonts/icomoon.eot?#iefix') format('embedded-opentype'),
+		url('fonts/icomoon.svg#icomoon') format('svg'),
+		url('fonts/icomoon.woff') format('woff'),
+		url('fonts/icomoon.ttf') format('truetype');
+	font-weight: normal;
+	font-style: normal;
+}
+
+.full {
+  width: 100%;
+  float: left;
+  box-sizing: border-box;
+}
+
+.nice-style(@base: @btn-color) {
+
+  height: @input-height;
+  line-height: @input-height;
+  color: darken(@base, 30%);
+  text-shadow: -1px -1px -1px lighten(@base, 10%);
+
+  font-weight: 800;
+
+  padding: 0px 5px;
+  background: @base;
+  border: 1px solid lighten(@base, 10%);
+  border-right: 1px solid darken(@base, 15%);
+  border-bottom: 2px solid darken(@base, 15%);
+
+  &:hover {
+    border: 1px solid lighten(@base, 10%);
+    border-left: 1px solid darken(@base, 15%);
+    border-bottom: 2px solid lighten(@base, 15%);
+    border-top: 1px solid darken(@base, 15%);
+  }
+
+}
+
+.button-style {
+  display: block;
+  .nice-style(@btn-bg);
+  height: @input-height / 2 + 2px;
+  line-height: @input-height /2;
+  font-size: 0.9em;
+
+  font-weight: 800;
+
+  cursor: pointer;
+}
+
+.btngrp {
+
+  height: @input-height / 2;
+  border: @btn-outer;
+  margin: 5px;
+
+  a {
+    float: left;
+    .button-style;
+  }
+
+}

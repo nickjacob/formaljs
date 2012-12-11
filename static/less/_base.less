@@ -1,0 +1,151 @@
+// Base.less
+// -- constants & mixins for styles
+
+// ------- Color Constants -----
+@black: #003;
+@blue: #113F8C;
+@blue_green: #01A4A4;
+@light_blue: #00A1CB;
+@pink: #D70060;
+@grey: #616161;
+@light_grey: #dcdcdc;
+@green: #32742C;
+@active: fadeout(@green,80%);
+
+@smblue: #063540;
+@off_white: lighten(@lightfade,17%);
+//@off_white: #E4D9CF;
+@dark_grey: #403D3A;
+@deep_red: #4C0822;
+
+
+.pretty-box( @base_color: @blue ) {
+
+  background: @base_color;
+  color: darken(@base_color, 50%);
+  border: 1px solid lighten(@base_color,90%);
+  border-bottom: 1px solid darken(@base_color,50%);
+
+}
+
+.transition {
+
+  -webkit-transition: all 0.3s ease-out; 
+     -moz-transition: all 0.3s ease-out; 
+       -o-transition: all 0.3s ease-out; 
+          transition: all 0.3s ease-out; 
+}
+
+.gradient(@_,@start: #cecece, @end: #aeaeae) {
+  background-color: @start;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(@start), to(@end));
+  background-image: -webkit-linear-gradient(top, @start, @end);
+  background-image:    -moz-linear-gradient(top, @start, @end);
+  background-image:      -o-linear-gradient(top, @start, @end);
+  background-image:         linear-gradient(to bottom, @start, @end);
+}
+
+.gradient(hover,@start: #cecece, @end: #aeaeae) {
+  background-color: @start;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(@start), to(@end));
+  background-image: -webkit-linear-gradient(top, @start, @end);
+  background-image:    -moz-linear-gradient(top, @start, @end);
+  background-image:      -o-linear-gradient(top, @start, @end);
+  background-image:         linear-gradient(to bottom, @start, @end);
+
+  &:hover {
+    background-color: @end;
+    background-image: -webkit-gradient(linear, left top, left bottom, from(@end), to(@start));
+    background-image: -webkit-linear-gradient(top, @end, @start);
+    background-image:    -moz-linear-gradient(top, @end, @start);
+    background-image:      -o-linear-gradient(top, @end, @start);
+    background-image:         linear-gradient(to bottom, @end, @start);
+  }
+}
+
+.legend-container {
+  button {
+    border: none;
+    outline: none;
+    margin: 0px;
+    float: left;
+    .button-theme(@legend-bg);
+    cursor: pointer;
+  }
+}
+
+.button-theme(@base_color: @grey ){
+  font-family: 'icomoon';
+  font-size: 1.9em;
+  color: darken(@base_color,20%);
+  text-shadow: 0px 0px 1px lighten(@base_color,90%);
+  //.invisible-text;
+  padding: 5px;
+  height: 44px;
+  width: 33.33%;
+  background: @base_color;
+  border-right: 1px solid darken(@base_color,40%);
+  border-left: 1px solid lighten(@base_color,10%);
+  //font-size: @text-font-size;
+  line-height: @icon-height;
+
+  &:hover {
+    background: darken(@base_color,5%);
+  }
+}
+
+body {
+  font-family: sans-serif;
+  font-family: 'Helvetica Neue','Helvetica';
+  font-family: 'Lato';
+  font-weight: 400;
+  font-size: 0.8em;
+}
+
+ul {
+  padding: 0px;
+  margin: 0px;
+}
+
+li {
+  display: block;
+  margin: 0px;
+  padding: 0px;
+  float: left;
+  width: 100%;
+}
+
+div, li, ul {
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+}
+
+.progress-outer {
+  margin: 5px;
+  width: @legend-width - 12px;
+  min-height: 20px;
+  background: @legend-bg;
+  float: left;
+  border: 1px solid darken(@light_grey,20%);
+}
+
+.progress-inner {
+  border: 1px solid lighten(@light_grey,10%);
+  .progress-bar;
+}
+
+.progress-bar(@color: @light_blue) {
+  width: 0%;
+  height: 20px;
+  line-height: 20px;
+  .gradient(bub,@color,darken(@color,5%);
+  text-align: right;
+  padding-right: 5px;
+  color: lighten(@color,40%);
+  text-shadow: -1px 0px 0px fadeout(darken(@color,20%),40%);
+  border-right: 1px solid darken(@color,10%);
+}
+
+
